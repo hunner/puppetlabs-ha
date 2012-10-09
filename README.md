@@ -7,7 +7,9 @@ Provides out-of-the-box clustering/HA solutions for various software products vi
 
 Examples and descriptions of the various usable classes follow. Obvious the examples are simple, and the classes allow for greater control, but this gets you started.
 
-### `ha`
+Each of the `ha::*` subclasses are meant to be independent on a per-node basis, not combined.
+
+### ha
 
 The base class is a configuration interface for the underlying software. It does nothing without also including `ha::*` subclasses.
 
