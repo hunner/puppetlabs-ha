@@ -1,0 +1,3 @@
+2012-10-12 - Version 0.1.0
+- Initial release.
+- Can failover VIPs, DRBD, Mysql (via drbd), and HAProxy
