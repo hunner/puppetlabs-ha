@@ -72,6 +72,22 @@ class { 'ha::mysql':
 }
 ```
 
-### ha::haproxy [unimplemented]
+### ha::haproxy
 
-This class will provide HAProxy failover via Corosync.
+This class provides HAProxy failover via Corosync. Example:
+
+```puppet
+class { 'ha':
+  cluster => 'cluster-5',
+  vip     => '23.23.23.23',
+  members => [
+    '10.0.0.3',
+    '10.0.0.2',
+  ],
+}
+
+class { 'ha::haproxy':
+  ipaddress => '23.23.23.23',
+  ports     => '80,443',
+}
+```
