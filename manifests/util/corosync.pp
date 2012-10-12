@@ -16,6 +16,13 @@ class ha::util::corosync (
     check_standby     => $check_standby,
   }
   -> anchor { 'ha::util::corosync::end': }
+  service { 'pacemaker':
+    ensure  => stopped,
+    require => Package['pacemaker'],
+    before  => [
+      Service['corosync'],
+      ::Corosync::Service['pacemaker'],
+  }
   ::corosync::service { 'pacemaker':
     version => '0',
     require => [Package['corosync'], Package['pacemaker']],
