@@ -9,5 +9,4 @@ class ha::vip (
       vip      => $vip,
     }
   }
-  include corosync::reprobe
 }

@@ -13,6 +13,5 @@ define ha::drbd::corosync::second {
         Anchor['ha::drbd::end'],
       ],
     }
-    include corosync::reprobe
   }
 }

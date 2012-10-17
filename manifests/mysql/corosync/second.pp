@@ -83,6 +83,5 @@ define ha::mysql::corosync::second {
         cib     => $resource,
       }
     }
-    include corosync::reprobe
   }
 }
