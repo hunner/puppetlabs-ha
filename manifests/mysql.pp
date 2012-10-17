@@ -1,5 +1,5 @@
 class ha::mysql (
-  $datadir,
+  $datadir     = '/var/lib/mysql',
   $resource    = $ha::resource,
   $vip         = $ha::vip,
   $manage_user = $ha::params::manage_user,
