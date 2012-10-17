@@ -1,5 +1,5 @@
 name    'puppetlabs-ha'
-version '0.1.0'
+version '0.1.1'
 source 'git://github.com/hunner/puppetlabs-ha'
 author 'Puppet Labs'
 license 'Apache License, Version 2.0'
