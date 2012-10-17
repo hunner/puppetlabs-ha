@@ -40,5 +40,4 @@ class ha::haproxy (
     cib     => $resource,
     require => Cs_colocation["${resource}_haproxy-on-ip"],
   }
-  include corosync::reprobe
 }

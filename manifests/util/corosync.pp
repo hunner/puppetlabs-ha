@@ -22,6 +22,7 @@ class ha::util::corosync (
     before  => [
       Service['corosync'],
       ::Corosync::Service['pacemaker'],
+    ],
   }
   ::corosync::service { 'pacemaker':
     version => '0',
