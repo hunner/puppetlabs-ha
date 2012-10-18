@@ -12,14 +12,15 @@ describe 'ha::mysql', :type => :class do
   end
   let(:params) do
     {
-      :datadir => '/var/lib/mysql',
       :vip     => '23.23.23.23'
     }
   end
   context "without exported resources" do
     let(:facts) do default_facts end
     it { should contain_class('ha::mysql') }
-    it { should contain_class('ha::util::drbd') }
+    it { should contain_class('ha::util::drbd').with(
+      'mountpoint' => '/var/lib/mysql',
+    ) }
     it { should_not contain_class('ha::util::corosync') }
     it { should_not contain_class('mysql::server') }
     it { should_not contain_drbd__resource__up('puppet_ha') }
